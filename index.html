@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O programie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div id="nav-placeholder"></div>
+</header>
+
+<main>
+    <section id="o-programie">
+        <h1>O programie</h1>
+        <p>Program LITERA umożliwia wyszukiwanie słów na podstawie wprowadzonych liter i spacji.</p>
+        <p>W polu tekstowym możesz wprowadzić litery i maksymalnie jedną spację, z których chcesz ułożyć słowa.</p>
+        <p>Po wciśnięciu przycisku <strong>SZUKAJ</strong> program znajdzie wszystkie słowa, które można ułożyć z wszystkich podanych liter.</p>
+        <p>Jeśli wciśniesz przycisk <strong>SZUKAJ WSZYSTKIE</strong>, program znajdzie wszystkie słowa, które można ułożyć z podanych znaków, niekoniecznie z wszystkich.</p>
+        <p>Jeśli wśród wpisanych znaków jest spacja, program zastępuje ją po kolei wszystkimi literami polskiego alfabetu. Uwaga! - duża ilość liter i spacja mogą spowodować długie szukanie słów. Zależy to od szybkości urządzenia.</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Litera. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+<script>
+    // Fetch and insert the navigation HTML
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+
+            // Get the current URL path
+            var currentPath = window.location.pathname.split('/').pop();
+
+            // If the URL is empty, set default to 'index.html'
+            if (!currentPath) {
+                currentPath = 'index.html';
+            }
+
+            // Add 'active' class to the corresponding link
+            var links = document.querySelectorAll('nav a');
+            links.forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+</script>
+</body>
+</html>
+
+

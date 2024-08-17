@@ -1,0 +1,78 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styl dla całego dokumentu */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6; /* Większy odstęp między wierszami */
+}
+
+/* Styl nagłówka */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0; /* Większy padding dla lepszej estetyki */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px; /* Większe odstępy między elementami menu */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px; /* Rozmiar czcionki dla lepszej czytelności */
+}
+
+/* Styl głównej treści */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Styl sekcji */
+section {
+    margin-bottom: 20px; /* Odstęp między sekcjami */
+}
+
+/* Styl tytułów sekcji */
+h1 {
+    font-size: 2em; /* Większy rozmiar czcionki dla tytułów */
+    margin-bottom: 20px; /* Odstęp poniżej tytułu */
+}
+
+/* Styl akapitów w sekcjach */
+p {
+    margin-bottom: 1em; /* Większe odstępy między akapitami */
+}
+
+/* Styl dla aktywnego linku */
+nav ul li a.active {
+    font-weight: bold; /* Pogrubienie aktywnego linku */
+    text-decoration: underline; /* Podkreślenie aktywnego linku */
+    color: #ff0; /* Kolor aktywnego linku */
+}
+
+/* Styl stopki */
+footer {
+    background-color: #f1f1f1;
+    padding: 15px 0; /* Większy padding dla lepszej estetyki */
+    text-align: center;
+    border-top: 1px solid #ccc;
+    margin-top: 20px; /* Odstęp od treści głównej */
+}

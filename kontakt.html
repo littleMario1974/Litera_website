@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div id="nav-placeholder"></div>
+</header>
+
+<main>
+    <section id="kontakt">
+        <h1>Kontakt</h1>
+        <p><strong>MJK ByteForge</strong></p>
+        <p>e-mail: <a href="mailto:mjk.byteforge@gmail.com">mjk.byteforge@gmail.com</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Litera. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+<script>
+    // Fetch and insert the navigation HTML
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+
+            // Get the current URL path
+            var currentPath = window.location.pathname.split('/').pop();
+
+            // If the URL is empty, set default to 'o-programie.html'
+            if (!currentPath) {
+                currentPath = 'o-programie.html';
+            }
+
+            // Add 'active' class to the corresponding link
+            var links = document.querySelectorAll('nav a');
+            links.forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+</script>
+</body>
+</html>

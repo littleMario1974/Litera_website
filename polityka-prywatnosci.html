@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Prywatności</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div id="nav-placeholder"></div>
+</header>
+
+<main>
+    <section id="polityka-prywatnosci">
+        <h1>Polityka Prywatności</h1>
+
+        <h2>Wprowadzenie</h2>
+        <p>Niniejsza Polityka Prywatności określa zasady korzystania z aplikacji "Literakowanie" (dalej: „Aplikacja”). Prosimy o uważne zapoznanie się z jej treścią, aby zrozumieć, jak działamy w zakresie prywatności i bezpieczeństwa danych.</p>
+
+        <h2>Administrator Danych</h2>
+        <p>Nie zbieramy danych osobowych. W przypadku pytań kontaktuj się z producentem MJK ByteForge, e-mail: <a href="mailto:mjk.byteforge@gmail.com">mjk.byteforge@gmail.com</a>.</p>
+
+        <h2>Jakie dane zbieramy?</h2>
+        <p>Nasza aplikacja nie zbiera żadnych danych osobowych od użytkowników.</p>
+
+        <h2>Wykorzystanie danych</h2>
+        <p>Ponieważ nie zbieramy żadnych danych osobowych, nie przechowujemy, nie przetwarzamy ani nie udostępniamy żadnych informacji dotyczących użytkowników naszej aplikacji.</p>
+
+        <h2>Bezpieczeństwo danych</h2>
+        <p>Chociaż nie zbieramy żadnych danych osobowych, stosujemy odpowiednie środki techniczne i organizacyjne, aby zapewnić bezpieczeństwo i integralność aplikacji.</p>
+
+        <h2>Reklamy</h2>
+        <p>Nasza aplikacja może wyświetlać reklamy za pośrednictwem usług takich jak Google AdMob. Reklamy te mogą korzystać z anonimowych danych użytkownika, takich jak identyfikatory urządzeń, aby dostarczać spersonalizowane treści reklamowe. Więcej informacji na temat polityki prywatności Google AdMob można znaleźć w <a href="https://policies.google.com/privacy" target="_blank">Polityce Prywatności Google AdMob</a>.</p>
+
+        <h2>Twoje prawa</h2>
+        <p>Jeżeli masz jakiekolwiek pytania lub wątpliwości dotyczące niniejszej Polityki Prywatności, skontaktuj się z nami pod adresem e-mail: <a href="mailto:mjk.byteforge@gmail.com">mjk.byteforge@gmail.com</a>.</p>
+
+        <h2>Zmiany w Polityce Prywatności</h2>
+        <p>Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności. Wszelkie zmiany będą publikowane na tej stronie. Zalecamy regularne sprawdzanie tej strony, aby być na bieżąco z wszelkimi zmianami.</p>
+
+        <h2>Kontakt</h2>
+        <p>Jeśli masz jakiekolwiek pytania dotyczące niniejszej Polityki Prywatności, skontaktuj się z nami pod adresem e-mail: <a href="mailto:mjk.byteforge@gmail.com">mjk.byteforge@gmail.com</a>.</p>
+
+        <p><strong>Data ostatniej aktualizacji: 03.07.2024</strong></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Litera. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+<script>
+    // Fetch and insert the navigation HTML
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+
+            // Get the current URL path
+            var currentPath = window.location.pathname.split('/').pop();
+
+            // If the URL is empty, set default to 'o-programie.html'
+            if (!currentPath) {
+                currentPath = 'o-programie.html';
+            }
+
+            // Add 'active' class to the corresponding link
+            var links = document.querySelectorAll('nav a');
+            links.forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+</script>
+</body>
+</html>
